@@ -13,7 +13,6 @@
 @implementation Contador {
     int boy;
     int girl;
-    int total;
 }
 
 static Contador *_instance = nil;
@@ -23,7 +22,6 @@ static Contador *_instance = nil;
     if (self) {
         boy = 0;
         girl = 0;
-        total = 0;
     }
     return self;
 }
@@ -40,10 +38,6 @@ static Contador *_instance = nil;
     girl++;
 }
 
-- (void)total {
-    total = boy + girl;
-}
-
 -(int)getBoys {
     return boy;
 }
@@ -53,7 +47,7 @@ static Contador *_instance = nil;
 }
 
 -(int)getTotal {
-    return total;
+    return ([self getBoys] + [self getGirls]);
 }
 
 

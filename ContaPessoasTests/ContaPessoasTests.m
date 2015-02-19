@@ -34,7 +34,7 @@
 - (void) testTotal {
     Contador *c = [[Contador alloc] init];
     [c maisUmaGata];
-    [c total];
+    [c getTotal];
     XCTAssert(([c getTotal] == 1), @"Pass");
 }
 
