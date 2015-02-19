@@ -31,12 +31,13 @@
 - (IBAction)clickBoy:(id)sender {
     [contador maisUmCueca];
     NSLog(@"Meninos - %i",[contador getBoys]);
-    NSLog(@"Total - %i", [contador getBoys] + [contador getGirls]);
+    NSLog(@"Total - %i", [contador getTotal]);
 }
 
 - (IBAction)clickGirl:(id)sender {
     [contador maisUmaGata];
     NSLog(@"Meninas - %i",[contador getGirls]);
+    NSLog(@"Total - %i", [contador getTotal]);
 }
 
 @end
