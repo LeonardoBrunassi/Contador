@@ -16,6 +16,8 @@
     int total;
 }
 
+static Contador *_instance = nil;
+
 -(id)init {
     self = [super init];
     if (self) {
@@ -24,6 +26,11 @@
         total = 0;
     }
     return self;
+}
+
++ (Contador *) instance {
+    if (_instance == nil) _instance = [[Contador alloc] init];
+    return _instance;
 }
 
 - (void)maisUmCueca {
