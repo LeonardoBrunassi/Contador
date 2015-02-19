@@ -8,10 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
+@class FirstViewController;
+
+@protocol FirstViewControllerDelegate
+
+-(void) sayHello: (FirstViewController *) firstViewController;
+
+
+@end
+
 @interface FirstViewController : UIViewController
 
 - (IBAction)clickBoy:(id)sender;
 - (IBAction)clickGirl:(id)sender;
+
+@property (nonatomic, assign) id delegate;
+
+- (void) helloDelegate;
 
 
 @end

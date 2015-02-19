@@ -20,6 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     contador = [Contador instance];
+    
+    FirstViewController *custom = [[FirstViewController alloc]init];
+    custom.delegate = self;
+    [custom helloDelegate];
 }
 
 
@@ -32,7 +36,13 @@
 - (IBAction)click:(id)sender {
     _totalBoys.text = [NSString stringWithFormat: @"%d", [contador getBoys]];
     _totalGirls.text = [NSString stringWithFormat: @"%d", [contador getGirls]];
-    _total.text = [NSString stringWithFormat:@"%d", [contador getGirls] + [contador getBoys] ];
+    _total.text = [NSString stringWithFormat:@"%d", [contador getTotal]];
+}
+
+-(void) sayHello: (FirstViewController *) customClass {
+    _totalBoys.text = [NSString stringWithFormat: @"%d", [contador getBoys]];
+    _totalGirls.text = [NSString stringWithFormat: @"%d", [contador getGirls]];
+    _total.text = [NSString stringWithFormat:@"%d", [contador getTotal]];
 }
 
 
