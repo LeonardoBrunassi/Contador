@@ -27,7 +27,7 @@
     [super viewDidLoad];
     contador = [Contador instance];
     contador.cd = self; // contador do Delegate. DELEGATE AULA
-    [self click: self]; // DELEGATE AULA
+    [self click: self]; // DELEGATE AULA.
     
 //    FirstViewController *custom = [[FirstViewController alloc]init];
 //    custom.delegate = self;
