@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "FirstViewController.h"
+#import "ContadorDelegate.h"
 
-@interface SecondViewController : UIViewController <FirstViewControllerDelegate>
+@interface SecondViewController : UIViewController <ContadorDelegate> //<ContadorDelegate> é DELEGATE AULA //<FirstViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *totalBoys;
 @property (weak, nonatomic) IBOutlet UILabel *totalGirls;

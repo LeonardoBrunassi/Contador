@@ -27,15 +27,19 @@ static Contador *_instance = nil;
 }
 
 + (Contador *) instance {
-    if (_instance == nil) _instance = [[Contador alloc] init];
+    if (_instance == nil) {
+    _instance = [[Contador alloc] init];
+    }
     return _instance;
 }
 
 - (void)maisUmCueca {
     boy = boy + 1;
+    [_cd recebeValores:boy :girl : [self getTotal]]; //DELEGATE AULA
 }
 - (void)maisUmaGata {
     girl++;
+    [_cd recebeValores:boy :girl : [self getTotal]]; //DELEGATE AULA
 }
 
 -(int)getBoys {

@@ -17,14 +17,26 @@
 
 @implementation SecondViewController
 
+- (void) recebeValores:(int)boys :(int)girls :(int)total { // DELEGATE AULA
+    _totalBoys.text = [NSString stringWithFormat: @"%d", boys];
+    _totalGirls.text = [NSString stringWithFormat: @"%d", girls];
+    _total.text = [NSString stringWithFormat:@"%d", total];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     contador = [Contador instance];
+    contador.cd = self; // contador do Delegate. DELEGATE AULA
+    [self click: self]; // DELEGATE AULA
     
-    FirstViewController *custom = [[FirstViewController alloc]init];
-    custom.delegate = self;
-    [custom helloDelegate];
+//    FirstViewController *custom = [[FirstViewController alloc]init];
+//    custom.delegate = self;
+//    [custom helloDelegate];
 }
+//
+//- (void) viewDidAppear:(BOOL)animated {
+//    [self click: self];
+//}
 
 
 
@@ -39,11 +51,11 @@
     _total.text = [NSString stringWithFormat:@"%d", [contador getTotal]];
 }
 
--(void) sayHello: (FirstViewController *) customClass {
-    _totalBoys.text = [NSString stringWithFormat: @"%d", [contador getBoys]];
-    _totalGirls.text = [NSString stringWithFormat: @"%d", [contador getGirls]];
-    _total.text = [NSString stringWithFormat:@"%d", [contador getTotal]];
-}
+//-(void) sayHello: (FirstViewController *) customClass {
+//    _totalBoys.text = [NSString stringWithFormat: @"%d", [contador getBoys]];
+//    _totalGirls.text = [NSString stringWithFormat: @"%d", [contador getGirls]];
+//    _total.text = [NSString stringWithFormat:@"%d", [contador getTotal]];
+//}
 
 
 @end

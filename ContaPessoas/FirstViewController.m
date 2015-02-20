@@ -40,8 +40,8 @@
     NSLog(@"Total - %i", [contador getTotal]);
 }
 
--(void) helloDelegate {
-    [_delegate sayHello:self];
-}
+//-(void) helloDelegate {
+//    [_delegate sayHello:self];
+//}
 
 @end
